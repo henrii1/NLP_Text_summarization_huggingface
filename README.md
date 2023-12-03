@@ -37,13 +37,13 @@ This repository contains the source code for a Text Summarization Application th
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/henrii1/NLP_Text_summarization_huggingface.git
+    cd your-NLP_Text_smmarization_huggingface
     ```
 
-2. **Install Dependencies:**
+2. **Install Dependencies, Lint, Format and Test:**
     ```bash
-    pip install -r requirements.txt
+    make all
     ```
 
 3. **Run the Application:**
