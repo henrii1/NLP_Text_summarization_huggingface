@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 
-# setup to run this workflow manually from the Actions tab
+  # to run this workflow manually from the actions tab
   workflow_dispatch:
 
 jobs:
@@ -12,12 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-         fetch-depth: 0
-      - name: Add remot
+          fetch-depth: 0
+      - name: Add remote
         env:
-          HF: ${{ secrets.HF}}
-        run: git remote add space https://huggingface.co/spaces/henrii1/Text_summarization
-      - name: Push to Hub
+          HUGGINGFACE: ${{ secrets.HUGGINGFACE }}
+        run: git remote add space https://henrii1:$HUGGINGFACE@huggingface.co/spaces/henrii1/Text_summarization
+      - name: Push to hub
         env:
-          HF: ${{ secrets.HF}}
-        run: git push -F https://huggingface.co/spaces/henrii1/Text_summarization main
+          HUGGINGFACE: ${{ secrets.HUGGINGFACE }}
+        run: git push --force https://henrii1:$HUGGINGFACE@huggingface.co/spaces/henrii1/Text_summarization main
+      
